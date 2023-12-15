@@ -7,7 +7,7 @@ const mongoose = require("mongoose")
 const PORT = process.env.PORT || 3000
 
 //connectdb
-connectDB
+connectDB()
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
