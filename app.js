@@ -1,6 +1,8 @@
 require('dotenv').config()
 const express = require("express")
 const app = express()
+const cors = require('cors')
+const corsOptions = require('./config/corsOptions')
 const path = require("path")
 const connectDB = require("./config/dbConfig")
 const mongoose = require("mongoose")
@@ -8,6 +10,8 @@ const PORT = process.env.PORT || 3000
 
 //connectdb
 connectDB()
+
+app.use(cors())
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
